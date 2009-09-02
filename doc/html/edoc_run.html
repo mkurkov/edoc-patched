@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>edoc_run</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>edoc_run</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+edoc_run
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Interface for calling EDoc from Erlang startup options.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>Interface for calling EDoc from Erlang startup options.
+</p>
+<p>The following is an example of typical usage in a Makefile:
+
+</p>
+<div class="example"><pre>
+     docs:
+             erl -noshell -run edoc_run application &#34;'$(APP_NAME)'&#34; \n               '&#34;.&#34;' '[{def,{vsn,&#34;$(VSN)&#34;}}]'
+</pre></div>
+
+<p>
+(note the single-quotes to avoid shell expansion, and the 
+double-quotes enclosing the strings).
+</p>
+<p><strong>New feature in version 0.6.9</strong>: It is no longer
+necessary to write <span class="code">-s init stop</span> last on the command line in order
+to make the execution terminate. The termination (signalling success
+or failure to the operating system) is now built into these
+functions.
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="application-1"><span class="bold_code">application(Args::[string()]) -&#62; none()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="application-1"><!-- Empty --></a>
+<p>Calls <a href="edoc.html#application-3">edoc:application/3</a> with the corresponding
+arguments. The strings in the list are parsed as Erlang constant
+terms. The list can be either <span class="code">[App]</span>, <span class="code">[App, Options]</span> or <span class="code">[App,
+Dir, Options]</span>. In the first case <a href="edoc.html#application-1">edoc:application/1</a> is
+called instead; in the second case, <a href="edoc.html#application-2">edoc:application/2</a> is 
+called.
+</p>
+<p>The function call never returns; instead, the emulator is
+automatically terminated when the call has completed, signalling
+success or failure to the operating system.
+</p>
+</div>
+
+<p><a name="file-1"><span class="bold_code">file(Args::[string()]) -&#62; none()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="file-1"><!-- Empty --></a>
+<p><strong>This function is deprecated: </strong>This is part of the old interface to EDoc and is mainly
+kept for backwards compatibility. The preferred way of generating
+documentation is through one of the functions <a href="#application-1">application/1</a>,
+<a href="#packages-1">packages/1</a> and <a href="#files-1">files/1</a>.
+
+</p>
+<p>Calls <a href="edoc.html#file-2">edoc:file/2</a> with the corresponding arguments. The
+strings in the list are parsed as Erlang constant terms. The list can
+be either <span class="code">[File]</span> or <span class="code">[File, Options]</span>. In the first case, an empty
+list of options is passed to <a href="edoc.html#file-2">edoc:file/2</a>.
+</p>
+<p>The following is an example of typical usage in a Makefile:
+
+</p>
+<div class="example"><pre>
+     $(DOCDIR)/%.html:%.erl
+             erl -noshell -run edoc_run file '&#34;$&#60;&#34;' '[{dir,&#34;$(DOCDIR)&#34;}]' \n               -s init stop
+</pre></div>
+
+<p>The function call never returns; instead, the emulator is
+automatically terminated when the call has completed, signalling
+success or failure to the operating system.
+</p>
+</div>
+
+<p><a name="files-1"><span class="bold_code">files(Args::[string()]) -&#62; none()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="files-1"><!-- Empty --></a>
+<p>Calls <a href="edoc.html#files-2">edoc:files/2</a> with the corresponding arguments. The
+strings in the list are parsed as Erlang constant terms. The list can
+be either <span class="code">[Files]</span> or <span class="code">[Files, Options]</span>. In the first case, <a href="edoc.html#files-1">edoc:files/1</a> is called instead.
+</p>
+<p>The function call never returns; instead, the emulator is
+automatically terminated when the call has completed, signalling
+success or failure to the operating system.
+</p>
+</div>
+
+<p><a name="packages-1"><span class="bold_code">packages(Args::[string()]) -&#62; none()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="packages-1"><!-- Empty --></a>
+<p>Calls <a href="edoc.html#application-2">edoc:application/2</a> with the corresponding
+arguments. The strings in the list are parsed as Erlang constant
+terms. The list can be either <span class="code">[Packages]</span> or <span class="code">[Packages, Options]</span>.
+In the first case <a href="edoc.html#application-1">edoc:application/1</a> is called instead.
+</p>
+<p>The function call never returns; instead, the emulator is
+automatically terminated when the call has completed, signalling
+success or failure to the operating system.
+</p>
+</div>
+
+<h3>See also</h3>
+<div class="REFBODY">
+
+<p><a href="edoc.html">edoc</a>
+</p>
+</div>
+
+<h3>AUTHORS</h3>
+<div class="REFBODY">
+Richard Carlsson - support@erlang.ericsson.se<br/>
+
+</div>
+<center>
+<hr/>
+<small>edoc 0.7.6.3<br/>
+  Copyright &copy; 1991-2009
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>edoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>edoc</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+edoc
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+EDoc - the Erlang program documentation generator.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>EDoc - the Erlang program documentation generator.
+</p>
+<p>This module provides the main user interface to EDoc.
+
+</p>
+<ul>
+
+<li>
+<a href="chapter.html">EDoc User Manual</a><br />
+
+</li>
+
+
+<li>
+<a href="chapter.html#Running_EDoc">Running EDoc</a><br />
+
+</li>
+
+
+</ul>
+
+</div>
+
+<h3>DATA TYPES</h3>
+<div class="REFBODY">
+<a name="types"><!-- Empty --></a>
+<dl>
+
+<dt>
+<span class="code">edoc_module()</span>
+</dt>
+
+<dd>
+<a name="type-edoc_module"><!-- Empty --></a>
+The EDoc documentation data for a module,
+expressed as an XML document in <a href="javascript:erlhref('../../../../', 'xmerl', 'index.html');">XMerL</a> format. See
+the file <a target="_top" href="../../priv/edoc.dtd">edoc.dtd</a> for details.
+<br />
+
+
+</dd>
+
+<dt>
+<span class="code">filename() = filename() (see module //kernel/file)</span>
+</dt>
+
+<dd>
+<a name="type-filename"><!-- Empty --></a> 
+</dd>
+
+<dt>
+<span class="code">package() = atom() | string()</span>
+</dt>
+
+<dd>
+<a name="type-package"><!-- Empty --></a> 
+</dd>
+
+<dt>
+<span class="code">proplist() = [term()]</span>
+</dt>
+
+<dd>
+<a name="type-proplist"><!-- Empty --></a> 
+</dd>
+
+<dt>
+<span class="code">syntaxTree() = syntaxTree() (see module //syntax_tools/erl_syntax)</span>
+</dt>
+
+<dd>
+<a name="type-syntaxTree"><!-- Empty --></a> 
+</dd>
+
+</dl>
+
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="application-1"><span class="bold_code">application(Application::atom()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="application-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#application-2">application(Application, [])</a>.
+</p>
+</div>
+
+<p><a name="application-1"><span class="bold_code">application(Application::atom(), Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="application-2"><!-- Empty --></a>
+<p>Run EDoc on an application in its default app-directory. See
+<a href="#application-3">application/3</a> for details.
+</p>
+<p><strong>See also:</strong> <a href="#application-1">application/1</a>.
+</p>
+</div>
+
+<p><a name="application-1"><span class="bold_code">application(Application::atom(), Dir::filename(), Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="application-3"><!-- Empty --></a>
+<p>Run EDoc on an application located in the specified directory.
+Tries to automatically set up good defaults. Unless the user
+specifies otherwise:
+
+</p>
+<ul>
+
+<li>
+The <span class="code">doc</span> subdirectory will be used as the target directory, if
+it exists; otherwise the application directory is used.
+<br />
+
+</li>
+
+
+<li>
+The source code is assumed to be located in the <span class="code">src</span>
+subdirectory, if it exists, or otherwise in the application
+directory itself.
+<br />
+
+</li>
+
+
+<li>
+The <a href="#run-3">subpackages</a> option is turned on. All found
+source files will be processed.
+<br />
+
+</li>
+
+
+<li>
+The <span class="code">include</span> subdirectory is automatically added to the
+include path. (Only important if <a href="#read_source-2"> preprocessing</a> is turned on.)
+<br />
+
+</li>
+
+
+</ul>
+
+<p>
+
+See <a href="#run-3">run/3</a> for details, including options.
+
+</p>
+<p><strong>See also:</strong> <a href="#application-2">application/2</a>.
+</p>
+</div>
+
+<p><a name="file-1"><span class="bold_code">file(Name::filename()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="file-1"><!-- Empty --></a>
+<p><strong>This function is deprecated: </strong>See <a href="#file-2">file/2</a> for details.
+</p>
+<p>Equivalent to <a href="#file-2">file(Name, [])</a>.
+</p>
+</div>
+
+<p><a name="file-1"><span class="bold_code">file(Name::filename(), Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="file-2"><!-- Empty --></a>
+<p><strong>This function is deprecated: </strong>This is part of the old interface to EDoc and is mainly
+kept for backwards compatibility. The preferred way of generating
+documentation is through one of the functions <a href="#application-2">application/2</a>,
+<a href="#packages-2">packages/2</a> and <a href="#files-2">files/2</a>.
+
+</p>
+<p>Reads a source code file and outputs formatted documentation to 
+a corresponding file.
+</p>
+<p>Options:
+
+</p>
+<dl>
+
+<dt>
+<span class="code">{dir, filename()}</span>
+
+</dt>
+
+<dd>
+Specifies the output directory for the created file. (By
+default, the output is written to the directory of the source
+file.)
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{source_suffix, string()}</span>
+
+</dt>
+
+<dd>
+Specifies the expected suffix of the input file. The default
+value is <span class="code">&#34;.erl&#34;</span>.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{file_suffix, string()}</span>
+
+</dt>
+
+<dd>
+Specifies the suffix for the created file. The default value is
+<span class="code">&#34;.html&#34;</span>.
+<br />
+
+</dd>
+
+</dl>
+
+<p>See <a href="#get_doc-2">get_doc/2</a> and <a href="#layout-2">layout/2</a> for further 
+options.
+</p>
+<p>For running EDoc from a Makefile or similar, see
+<a href="edoc_run.html#file-1">edoc_run:file/1</a>.
+
+</p>
+<p><strong>See also:</strong> <a href="#read-2">read/2</a>.
+</p>
+</div>
+
+<p><a name="files-1"><span class="bold_code">files(Files::[filename() | {package(), [filename()]}]) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="files-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#packages-2">packages(Packages, [])</a>.
+</p>
+</div>
+
+<p><a name="files-1"><span class="bold_code">files(Files::[filename() | {package(), [filename()]}], Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="files-2"><!-- Empty --></a>
+<p>Runs EDoc on a given set of source files. See <a href="#run-3">run/3</a> for
+details, including options.
+</p>
+</div>
+
+<p><a name="get_doc-1"><span class="bold_code">get_doc(File::filename()) -&#62; {ModuleName, edoc_module()}</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="get_doc-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#get_doc-2">get_doc(File, [])</a>.
+</p>
+</div>
+
+<p><a name="get_doc-1"><span class="bold_code">get_doc(File::filename(), Options::proplist()) -&#62; {ModuleName, edoc_module()}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ModuleName = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+<a name="get_doc-2"><!-- Empty --></a>
+<p>Reads a source code file and extracts EDoc documentation data.
+Note that without an environment parameter (see <a href="#get_doc-3">get_doc/3</a>), 
+hypertext links may not be correct.
+</p>
+<p>Options:
+
+</p>
+<dl>
+
+<dt>
+<span class="code">{def, Macros}</span>
+
+</dt>
+
+<dd>
+
+<ul>
+
+<li>
+<span class="code">Macros</span> = <span class="code">Macro | [Macro]</span><br />
+
+</li>
+
+
+<li>
+<span class="code">Macro</span> = <span class="code">{Name::atom(), Text::string()}</span><br />
+
+</li>
+
+
+</ul>
+
+Specifies a set of EDoc macro definitions. See
+<a href="chapter.html#Macro_expansion">Inline macro expansion</a>
+for details.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{hidden, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, documentation of hidden functions will
+also be included. The default value is <span class="code">false</span>.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{private, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, documentation of private functions will
+also be included. The default value is <span class="code">false</span>.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{todo, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, To-Do notes written using <span class="code">@todo</span> or
+<span class="code">@TODO</span> tags will be included in the documentation. The default
+value is <span class="code">false</span>.
+<br />
+
+</dd>
+
+</dl>
+
+<p>See <a href="#read_source-2">read_source/2</a>, <a href="#read_comments-2">read_comments/2</a> and <a href="edoc_lib.html#get_doc_env-4">edoc_lib:get_doc_env/4</a> for further options.
+
+</p>
+<p><strong>See also:</strong> <a href="#get_doc-3">get_doc/3</a>, <a href="#layout-2">layout/2</a>, <a href="#read-2">read/2</a>, <a href="#run-3">run/3</a>, <a href="edoc_extract.html#source-5">edoc_extract:source/5</a>.
+</p>
+</div>
+
+<p><a name="get_doc-1"><span class="bold_code">get_doc(File::filename(), Env::edoc_env() (see module edoc_lib), Options::proplist()) -&#62; {ModuleName, edoc_module()}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ModuleName = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+<a name="get_doc-3"><!-- Empty --></a>
+<p>Like <a href="#get_doc-2">get_doc/2</a>, but for a given environment
+parameter. <span class="code">Env</span> is an environment created by <a href="edoc_lib.html#get_doc_env-4">edoc_lib:get_doc_env/4</a>.
+</p>
+</div>
+
+<p><a name="layout-1"><span class="bold_code">layout(Doc::edoc_module()) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="layout-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#layout-2">layout(Doc, [])</a>.
+</p>
+</div>
+
+<p><a name="layout-1"><span class="bold_code">layout(Doc::edoc_module(), Options::proplist()) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="layout-2"><!-- Empty --></a>
+<p>Transforms EDoc module documentation data to text. The default 
+layout creates an HTML document.
+</p>
+<p>Options:
+
+</p>
+<dl>
+
+<dt>
+<span class="code">{layout, Module::atom()}</span>
+
+</dt>
+
+<dd>
+Specifies a callback module to be used for formatting. The
+module must export a function <span class="code">module(Doc, Options)</span>. The
+default callback module is <a href="edoc_layout.html">edoc_layout</a>; see <a href="edoc_layout.html#module-2">edoc_layout:module/2</a> for layout-specific options.
+<br />
+
+</dd>
+
+</dl>
+
+<p>
+
+</p>
+<p><strong>See also:</strong> <a href="#file-2">file/2</a>, <a href="#layout-1">layout/1</a>, <a href="#read-2">read/2</a>, <a href="#run-3">run/3</a>.
+</p>
+</div>
+
+<p><a name="packages-1"><span class="bold_code">packages(Packages::[package()]) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="packages-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#packages-2">packages(Packages, [])</a>.
+</p>
+</div>
+
+<p><a name="packages-1"><span class="bold_code">packages(Packages::[package()], Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="packages-2"><!-- Empty --></a>
+<p>Runs EDoc on a set of packages. The <span class="code">source_path</span> option is used
+to locate the files; see <a href="#run-3">run/3</a> for details, including
+options. This function automatically appends the current directory to
+the source path.
+
+</p>
+</div>
+
+<p><a name="read-1"><span class="bold_code">read(File::filename()) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#read-2">read(File, [])</a>.
+</p>
+</div>
+
+<p><a name="read-1"><span class="bold_code">read(File::filename(), Options::proplist()) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read-2"><!-- Empty --></a>
+<p>Reads and processes a source file and returns the resulting
+EDoc-text as a string. See <a href="#get_doc-2">get_doc/2</a> and <a href="#layout-2">layout/2</a> for
+options.
+
+</p>
+<p><strong>See also:</strong> <a href="#file-2">file/2</a>.
+</p>
+</div>
+
+<p><a name="read_comments-1"><span class="bold_code">read_comments(File) -&#62; [comment()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read_comments-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#read_comments-2">read_comments(File, [])</a>.
+</p>
+</div>
+
+<p><a name="read_comments-1"><span class="bold_code">read_comments(File::filename(), Options::proplist()) -&#62; [comment()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">{Line, Column, Indentation, Text}</span><br/>
+<span class="bold_code">Line = integer()</span><br/>
+<span class="bold_code">Column = integer()</span><br/>
+<span class="bold_code">Indentation = integer()</span><br/>
+<span class="bold_code">Text = [string()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+<a name="read_comments-2"><!-- Empty --></a>
+<p>Extracts comments from an Erlang source code file. See the
+module <a href="javascript:erlhref('../../../../', 'syntax_tools', 'erl_comment_scan.html');">erl_comment_scan(3)</a> for details on the
+representation of comments. Currently, no options are avaliable.
+</p>
+</div>
+
+<p><a name="read_source-1"><span class="bold_code">read_source(Name::File) -&#62; [syntaxTree()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read_source-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#read_source-2">read_source(File, [])</a>.
+</p>
+</div>
+
+<p><a name="read_source-1"><span class="bold_code">read_source(File::filename(), Options::proplist()) -&#62; [syntaxTree()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read_source-2"><!-- Empty --></a>
+<p>Reads an Erlang source file and returns the list of &#34;source code 
+form&#34; syntax trees.
+</p>
+<p>Options:
+
+</p>
+<dl>
+
+<dt>
+<span class="code">{preprocess, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, the source file will be read via the
+Erlang preprocessor (<span class="code">epp</span>). The default value is <span class="code">false</span>.
+<span class="code">no_preprocess</span> is an alias for <span class="code">{preprocess, false}</span>.<br />
+
+
+Normally, preprocessing is not necessary for EDoc to work, but
+if a file contains too exotic definitions or uses of macros, it
+will not be possible to read it without preprocessing. <strong>Note:
+comments in included files will not be available to EDoc, even
+with this option enabled.</strong>
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{includes, Path::[string()]}</span>
+
+</dt>
+
+<dd>
+Specifies a list of directory names to be searched for include
+files, if the <span class="code">preprocess</span> option is turned on. Also used with
+the <span class="code">@headerfile</span> tag. The default value is the empty list. The
+directory of the source file is always automatically appended to
+the search path.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{macros, [{atom(), term()}]}</span>
+
+</dt>
+
+<dd>
+Specifies a list of pre-defined Erlang preprocessor (<span class="code">epp</span>)
+macro definitions, used if the <span class="code">preprocess</span> option is turned on.
+The default value is the empty list.<br />
+
+</dd>
+
+</dl>
+
+<p>
+
+</p>
+<p><strong>See also:</strong> <a href="javascript:erlhref('../../../../', 'syntax_tools', 'erl_syntax.html');">erl_syntax(3)</a>, <a href="#get_doc-2">get_doc/2</a>.
+</p>
+</div>
+
+<p><a name="run-1"><span class="bold_code">run(Packages::[package()], Files::[filename() | {package(), [filename()]}], Options::proplist()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="run-3"><!-- Empty --></a>
+<p>Runs EDoc on a given set of source files and/or packages. Note
+that the doclet plugin module has its own particular options; see the
+<span class="code">doclet</span> option below.
+</p>
+<p>Also see <a href="#layout-2">layout/2</a> for layout-related options, and
+<a href="#get_doc-2">get_doc/2</a> for options related to reading source 
+files.
+</p>
+<p>Options:
+
+</p>
+<dl>
+
+<dt>
+<span class="code">{app_default, string()}</span>
+
+</dt>
+
+<dd>
+Specifies the default base URI for unknown applications.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{application, App::atom()}</span>
+
+</dt>
+
+<dd>
+Specifies that the generated documentation describes the
+application <span class="code">App</span>. This mainly affects generated references.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{dir, filename()}</span>
+
+</dt>
+
+<dd>
+Specifies the target directory for the generated documentation.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{doc_path, [string()]}</span>
+
+</dt>
+
+<dd>
+Specifies a list of URI:s pointing to directories that contain
+EDoc-generated documentation. URI without a <span class="code">scheme://</span> part are
+taken as relative to <span class="code">file://</span>. (Note that such paths must use
+<span class="code">/</span> as separator, regardless of the host operating system.)
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{doclet, Module::atom()}</span>
+
+</dt>
+
+<dd>
+Specifies a callback module to be used for creating the
+documentation. The module must export a function <span class="code">run(Cmd, Ctxt)</span>.
+The default doclet module is <a href="edoc_doclet.html">edoc_doclet</a>; see <a href="edoc_doclet.html#run-2">edoc_doclet:run/2</a> for doclet-specific options.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{exclude_packages, [package()]}</span>
+
+</dt>
+
+<dd>
+Lists packages to be excluded from the documentation. Typically
+used in conjunction with the <span class="code">subpackages</span> option.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{file_suffix, string()}</span>
+
+</dt>
+
+<dd>
+Specifies the suffix used for output files. The default value is
+<span class="code">&#34;.html&#34;</span>. Note that this also affects generated references.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{new, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, any existing <span class="code">edoc-info</span> file in the
+target directory will be ignored and overwritten. The default
+value is <span class="code">false</span>.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{packages, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, it it assumed that packages (module
+namespaces) are being used, and that the source code directory
+structure reflects this. The default value is <span class="code">true</span>. (Usually,
+this does the right thing even if all the modules belong to the
+top-level &#34;empty&#34; package.) <span class="code">no_packages</span> is an alias for
+<span class="code">{packages, false}</span>. See the <span class="code">subpackages</span> option below for 
+further details.<br />
+
+
+If the source code is organized in a hierarchy of
+subdirectories although it does not use packages, use
+<span class="code">no_packages</span> together with the recursive-search <span class="code">subpackages</span>
+option (on by default) to automatically generate documentation
+for all the modules.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{source_path, [filename()]}</span>
+
+</dt>
+
+<dd>
+Specifies a list of file system paths used to locate the source
+code for packages.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{source_suffix, string()}</span>
+
+</dt>
+
+<dd>
+Specifies the expected suffix of input files. The default
+value is <span class="code">&#34;.erl&#34;</span>.
+<br />
+
+</dd>
+
+<dt>
+<span class="code">{subpackages, bool()}</span>
+
+</dt>
+
+<dd>
+If the value is <span class="code">true</span>, all subpackages of specified packages
+will also be included in the documentation. The default value is
+<span class="code">false</span>. <span class="code">no_subpackages</span> is an alias for <span class="code">{subpackages,
+false}</span>. See also the <span class="code">exclude_packages</span> option.<br />
+
+
+Subpackage source files are found by recursively searching
+for source code files in subdirectories of the known source code
+root directories. (Also see the <span class="code">source_path</span> option.) Directory
+names must begin with a lowercase letter and contain only
+alphanumeric characters and underscore, or they will be ignored.
+(For example, a subdirectory named <span class="code">test-files</span> will not be
+searched.)
+<br />
+
+</dd>
+
+</dl>
+
+<p>
+
+</p>
+<p><strong>See also:</strong> <a href="#application-2">application/2</a>, <a href="#files-2">files/2</a>, <a href="#packages-2">packages/2</a>.
+</p>
+</div>
+
+<h3>AUTHORS</h3>
+<div class="REFBODY">
+Richard Carlsson - support@erlang.ericsson.se<br/>
+
+</div>
+<center>
+<hr/>
+<small>edoc 0.7.6.3<br/>
+  Copyright &copy; 1991-2009
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

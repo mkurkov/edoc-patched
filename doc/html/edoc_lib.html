@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>edoc_lib</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>edoc_lib</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+edoc_lib
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Utility functions for EDoc.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>Utility functions for EDoc.
+</p>
+</div>
+
+<h3>DATA TYPES</h3>
+<div class="REFBODY">
+<a name="types"><!-- Empty --></a>
+<dl>
+
+<dt>
+<span class="code">edoc_env()</span>
+</dt>
+
+<dd>
+<a name="type-edoc_env"><!-- Empty --></a>
+Environment information needed by EDoc for
+generating references. The data representation is not documented.
+<br />
+
+
+</dd>
+
+<dt>
+<span class="code">info() = #info{name=string(), mail=string(), uri=string()}</span>
+</dt>
+
+<dd>
+<a name="type-info"><!-- Empty --></a> 
+</dd>
+
+</dl>
+
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="copy_file-2"><span class="bold_code">copy_file(From, To) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="copy_file-2"><!-- Empty --></a>
+</div>
+
+<p><a name="count-2"><span class="bold_code">count(X, Xs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="count-2"><!-- Empty --></a>
+</div>
+
+<p><a name="datestr-1"><span class="bold_code">datestr(X1) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="datestr-1"><!-- Empty --></a>
+</div>
+
+<p><a name="escape_uri-1"><span class="bold_code">escape_uri(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="escape_uri-1"><!-- Empty --></a>
+</div>
+
+<p><a name="filename-1"><span class="bold_code">filename(T) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="filename-1"><!-- Empty --></a>
+</div>
+
+<p><a name="find_doc_dirs-0"><span class="bold_code">find_doc_dirs() -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="find_doc_dirs-0"><!-- Empty --></a>
+</div>
+
+<p><a name="find_file-3"><span class="bold_code">find_file(Ps, Pkg, Name) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="find_file-3"><!-- Empty --></a>
+</div>
+
+<p><a name="find_sources-2"><span class="bold_code">find_sources(Path, Opts) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="find_sources-2"><!-- Empty --></a>
+</div>
+
+<p><a name="find_sources-3"><span class="bold_code">find_sources(Path, Pkg, Opts) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="find_sources-3"><!-- Empty --></a>
+<p>See <a href="edoc.html#run-3">edoc:run/3</a> for a description of the options
+<span class="code">subpackages</span>, <span class="code">source_suffix</span> and <span class="code">exclude_packages</span>.
+</p>
+</div>
+
+<p><a name="get_doc_env-1"><span class="bold_code">get_doc_env(Options::proplist()) -&#62; edoc_env()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="get_doc_env-1"><!-- Empty --></a>
+<p>Equivalent to <a href="#get_doc_env-4">get_doc_env([], [], [], Opts)</a>.
+</p>
+</div>
+
+<p><a name="get_doc_env-4"><span class="bold_code">get_doc_env(App, Packages, Modules, Options::proplist()) -&#62; edoc_env()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">App = [] | atom()</span><br/>
+<span class="bold_code">Packages = [atom()]</span><br/>
+<span class="bold_code">Modules = [atom()]</span><br/>
+<span class="bold_code">[term()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+<a name="get_doc_env-4"><!-- Empty --></a>
+<p>Creates an environment data structure used by parts of EDoc for
+generating references, etc. See <a href="edoc.html#run-3">edoc:run/3</a> for a description
+of the options <span class="code">file_suffix</span>, <span class="code">app_default</span> and <span class="code">doc_path</span>.
+
+</p>
+<p><strong>See also:</strong> <a href="edoc.html#get_doc-3">edoc:get_doc/3</a>, <a href="edoc_extract.html#source-4">edoc_extract:source/4</a>.
+</p>
+</div>
+
+<p><a name="get_first_sentence-1"><span class="bold_code">get_first_sentence(Es) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="get_first_sentence-1"><!-- Empty --></a>
+</div>
+
+<p><a name="is_name-1"><span class="bold_code">is_name(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="is_name-1"><!-- Empty --></a>
+</div>
+
+<p><a name="is_relative_uri-1"><span class="bold_code">is_relative_uri(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="is_relative_uri-1"><!-- Empty --></a>
+</div>
+
+<p><a name="is_space-1"><span class="bold_code">is_space(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="is_space-1"><!-- Empty --></a>
+</div>
+
+<p><a name="join_uri-2"><span class="bold_code">join_uri(Base, Path) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="join_uri-2"><!-- Empty --></a>
+</div>
+
+<p><a name="lines-1"><span class="bold_code">lines(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="lines-1"><!-- Empty --></a>
+</div>
+
+<p><a name="parse_contact-2"><span class="bold_code">parse_contact(S, L) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="parse_contact-2"><!-- Empty --></a>
+<p>EDoc &#34;contact information&#34; parsing. This is the type of the
+content in e.g.
+<a href="chapter.html#mtag-author">@author</a> tags.
+</p>
+</div>
+
+<p><a name="parse_expr-2"><span class="bold_code">parse_expr(S, L) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="parse_expr-2"><!-- Empty --></a>
+<p>EDoc Erlang expression parsing. For parsing things like the
+content of <a href="chapter.html#ftag-equiv">@equiv</a>
+tags, and strings denoting file names, e.g. in @headerfile. Also used
+by <a href="edoc_run.html">edoc_run</a>.
+</p>
+</div>
+
+<p><a name="read_info_file-1"><span class="bold_code">read_info_file(Dir) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="read_info_file-1"><!-- Empty --></a>
+</div>
+
+<p><a name="run_doclet-2"><span class="bold_code">run_doclet(Fun, Opts) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="run_doclet-2"><!-- Empty --></a>
+<p>See <a href="edoc.html#run-3">edoc:run/3</a> for a description of the <span class="code">doclet</span> option.
+</p>
+</div>
+
+<p><a name="run_layout-2"><span class="bold_code">run_layout(Fun, Opts) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="run_layout-2"><!-- Empty --></a>
+<p>See <a href="edoc.html#layout-2">edoc:layout/2</a> for a description of the <span class="code">layout</span>
+option.
+</p>
+</div>
+
+<p><a name="segment-2"><span class="bold_code">segment(Es, N) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="segment-2"><!-- Empty --></a>
+</div>
+
+<p><a name="simplify_path-1"><span class="bold_code">simplify_path(P) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="simplify_path-1"><!-- Empty --></a>
+</div>
+
+<p><a name="split_at-2"><span class="bold_code">split_at(Cs, K) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="split_at-2"><!-- Empty --></a>
+</div>
+
+<p><a name="split_at_space-1"><span class="bold_code">split_at_space(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="split_at_space-1"><!-- Empty --></a>
+</div>
+
+<p><a name="split_at_stop-1"><span class="bold_code">split_at_stop(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="split_at_stop-1"><!-- Empty --></a>
+</div>
+
+<p><a name="strip_space-1"><span class="bold_code">strip_space(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="strip_space-1"><!-- Empty --></a>
+</div>
+
+<p><a name="timestr-1"><span class="bold_code">timestr(X1) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="timestr-1"><!-- Empty --></a>
+</div>
+
+<p><a name="to_label-1"><span class="bold_code">to_label(Cs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="to_label-1"><!-- Empty --></a>
+</div>
+
+<p><a name="transpose-1"><span class="bold_code">transpose(Xss) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="transpose-1"><!-- Empty --></a>
+</div>
+
+<p><a name="try_subdir-2"><span class="bold_code">try_subdir(Dir, Subdir) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="try_subdir-2"><!-- Empty --></a>
+</div>
+
+<p><a name="unique-1"><span class="bold_code">unique(Xs) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="unique-1"><!-- Empty --></a>
+</div>
+
+<p><a name="uri_get-1"><span class="bold_code">uri_get(Path) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="uri_get-1"><!-- Empty --></a>
+</div>
+
+<p><a name="write_file-1"><span class="bold_code">write_file(Text::deep_string(), Dir::filename() (see module edoc), Name::filename() (see module edoc)) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="write_file-3"><!-- Empty --></a>
+<p>Write the given <span class="code">Text</span> to the file named by <span class="code">Name</span> in directory
+<span class="code">Dir</span>. If the target directory does not exist, it will be created.
+</p>
+</div>
+
+<p><a name="write_file-1"><span class="bold_code">write_file(Text::deep_string(), Dir::filename() (see module edoc), Name::filename() (see module edoc), Package::atom() | string()) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="write_file-4"><!-- Empty --></a>
+<p>Like <a href="#write_file-3">write_file/3</a>, but adds path components to the target
+directory corresponding to the specified package.
+</p>
+</div>
+
+<p><a name="write_info_file-4"><span class="bold_code">write_info_file(App, Packages, Modules, Dir) -&#62; term()
+</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+<a name="write_info_file-4"><!-- Empty --></a>
+</div>
+
+<h3>See also</h3>
+<div class="REFBODY">
+
+<p><a href="edoc.html">edoc</a>
+</p>
+</div>
+
+<h3>AUTHORS</h3>
+<div class="REFBODY">
+Richard Carlsson - support@erlang.ericsson.se<br/>
+
+</div>
+<center>
+<hr/>
+<small>edoc 0.7.6.3<br/>
+  Copyright &copy; 1991-2009
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

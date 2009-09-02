@@ -1,0 +1,166 @@
+%% Automatically generated. Do not edit.
+{srcfile, "ref_man"}.
+{appname, "edoc"}.
+{appvsn, "0.7.6.3"}.
+{module, "edoc"}.
+{modulesummary, "EDoc - the Erlang program documentation generator."}.
+{name, "application/1"}.
+{fsummary, "Equivalent to application(Application, []). "}.
+{name, "application/1"}.
+{fsummary, "Run EDoc on an application in its default app-directory."}.
+{name, "application/1"}.
+{fsummary, "Run EDoc on an application located in the specified directory."}.
+{name, "file/1"}.
+{fsummary, "Equivalent to file(Name, []). "}.
+{name, "file/1"}.
+{fsummary, "Reads a source code file and outputs formatted documentation to  a corresponding file."}.
+{name, "files/1"}.
+{fsummary, "Equivalent to packages(Packages, []). "}.
+{name, "files/1"}.
+{fsummary, "Runs EDoc on a given set of source files."}.
+{name, "get_doc/1"}.
+{fsummary, "Equivalent to get_doc(File, []). "}.
+{name, "get_doc/1"}.
+{fsummary, "Reads a source code file and extracts EDoc documentation data."}.
+{name, "get_doc/1"}.
+{fsummary, "Like get_doc/2, but for a given environment parameter."}.
+{name, "layout/1"}.
+{fsummary, "Equivalent to layout(Doc, []). "}.
+{name, "layout/1"}.
+{fsummary, "Transforms EDoc module documentation data to text."}.
+{name, "packages/1"}.
+{fsummary, "Equivalent to packages(Packages, []). "}.
+{name, "packages/1"}.
+{fsummary, "Runs EDoc on a set of packages."}.
+{name, "read/1"}.
+{fsummary, "Equivalent to read(File, []). "}.
+{name, "read/1"}.
+{fsummary, "Reads and processes a source file and returns the resulting EDoc-text as a string."}.
+{name, "read_comments/1"}.
+{fsummary, "Equivalent to read_comments(File, []). "}.
+{name, "read_comments/1"}.
+{fsummary, "Extracts comments from an Erlang source code file."}.
+{name, "read_source/1"}.
+{fsummary, "Equivalent to read_source(File, []). "}.
+{name, "read_source/1"}.
+{fsummary, "Reads an Erlang source file and returns the list of &#34;source code  form&#34; syntax trees."}.
+{name, "run/1"}.
+{fsummary, "Runs EDoc on a given set of source files and/or packages."}.
+{module, "edoc_doclet"}.
+{modulesummary, "Standard doclet module for EDoc."}.
+{name, "run/1"}.
+{fsummary, "Main doclet entry point."}.
+{module, "edoc_extract"}.
+{modulesummary, "EDoc documentation extraction."}.
+{name, "file/1"}.
+{fsummary, "Reads a text file and returns the list of tags in the file."}.
+{name, "header/1"}.
+{fsummary, "Similar to header/5, but reads the syntax tree and the comments from the specified file."}.
+{name, "header/2"}.
+{fsummary, "Extracts EDoc documentation from commented header file syntax trees."}.
+{name, "header/2"}.
+{fsummary, "Similar to header/4, but first inserts the given comments in the syntax trees."}.
+{name, "source/1"}.
+{fsummary, "Like source/5, but reads the syntax tree and the comments from the specified file."}.
+{name, "source/2"}.
+{fsummary, "Extracts EDoc documentation from commented source code syntax trees."}.
+{name, "source/2"}.
+{fsummary, "Like source/4, but first inserts the given comments in the syntax trees."}.
+{name, "text/1"}.
+{fsummary, "Returns the list of tags in the text."}.
+{module, "edoc_layout"}.
+{modulesummary, "The standard HTML layout module for EDoc."}.
+{name, "module/2"}.
+{fsummary, "The layout function."}.
+{name, "overview/2"}.
+{fsummary, " "}.
+{name, "package/2"}.
+{fsummary, " "}.
+{name, "type/1"}.
+{fsummary, " "}.
+{module, "edoc_lib"}.
+{modulesummary, "Utility functions for EDoc."}.
+{name, "copy_file/2"}.
+{fsummary, " "}.
+{name, "count/2"}.
+{fsummary, " "}.
+{name, "datestr/1"}.
+{fsummary, " "}.
+{name, "escape_uri/1"}.
+{fsummary, " "}.
+{name, "filename/1"}.
+{fsummary, " "}.
+{name, "find_doc_dirs/0"}.
+{fsummary, " "}.
+{name, "find_file/3"}.
+{fsummary, " "}.
+{name, "find_sources/2"}.
+{fsummary, " "}.
+{name, "find_sources/3"}.
+{fsummary, "See edoc:run/3 for a description of the options subpackages, source_suffix and exclude_packages."}.
+{name, "get_doc_env/1"}.
+{fsummary, "Equivalent to get_doc_env([], [], [], Opts). "}.
+{name, "get_doc_env/4"}.
+{fsummary, "Creates an environment data structure used by parts of EDoc for generating references, etc."}.
+{name, "get_first_sentence/1"}.
+{fsummary, " "}.
+{name, "is_name/1"}.
+{fsummary, " "}.
+{name, "is_relative_uri/1"}.
+{fsummary, " "}.
+{name, "is_space/1"}.
+{fsummary, " "}.
+{name, "join_uri/2"}.
+{fsummary, " "}.
+{name, "lines/1"}.
+{fsummary, " "}.
+{name, "parse_contact/2"}.
+{fsummary, "EDoc &#34;contact information&#34; parsing."}.
+{name, "parse_expr/2"}.
+{fsummary, "EDoc Erlang expression parsing."}.
+{name, "read_info_file/1"}.
+{fsummary, " "}.
+{name, "run_doclet/2"}.
+{fsummary, "See edoc:run/3 for a description of the doclet option."}.
+{name, "run_layout/2"}.
+{fsummary, "See edoc:layout/2 for a description of the layout option."}.
+{name, "segment/2"}.
+{fsummary, " "}.
+{name, "simplify_path/1"}.
+{fsummary, " "}.
+{name, "split_at/2"}.
+{fsummary, " "}.
+{name, "split_at_space/1"}.
+{fsummary, " "}.
+{name, "split_at_stop/1"}.
+{fsummary, " "}.
+{name, "strip_space/1"}.
+{fsummary, " "}.
+{name, "timestr/1"}.
+{fsummary, " "}.
+{name, "to_label/1"}.
+{fsummary, " "}.
+{name, "transpose/1"}.
+{fsummary, " "}.
+{name, "try_subdir/2"}.
+{fsummary, " "}.
+{name, "unique/1"}.
+{fsummary, " "}.
+{name, "uri_get/1"}.
+{fsummary, " "}.
+{name, "write_file/1"}.
+{fsummary, "Write the given Text to the file named by Name in directory Dir."}.
+{name, "write_file/1"}.
+{fsummary, "Like write_file/3, but adds path components to the target directory corresponding to the specified package."}.
+{name, "write_info_file/4"}.
+{fsummary, " "}.
+{module, "edoc_run"}.
+{modulesummary, "Interface for calling EDoc from Erlang startup options."}.
+{name, "application/1"}.
+{fsummary, "Calls edoc:application/3 with the corresponding arguments."}.
+{name, "file/1"}.
+{fsummary, "Calls edoc:file/2 with the corresponding arguments."}.
+{name, "files/1"}.
+{fsummary, "Calls edoc:files/2 with the corresponding arguments."}.
+{name, "packages/1"}.
+{fsummary, "Calls edoc:application/2 with the corresponding arguments."}.

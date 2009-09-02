@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>EDoc Release Notes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="1"><!-- Empty --></a>
+<h2>1 EDoc Release Notes</h2>
+
+<p>This document describes the changes made to the EDoc
+application.
+</p><a name="1.1"><!-- Empty --></a>
+<h3>1.1 Edoc 0.7.6.3</h3>
+<a name="1.1.1"><!-- Empty --></a>
+<h4>1.1.1 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+         The copyright notices have been updated.<br />
+
+
+         Own Id: OTP-7851<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.2"><!-- Empty --></a>
+<h3>1.2 Edoc 0.7.6.2</h3>
+<a name="1.2.1"><!-- Empty --></a>
+<h4>1.2.1 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+
+         Minor updates.<br />
+
+
+         Own Id: OTP-7642<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.3"><!-- Empty --></a>
+<h3>1.3 Edoc 0.7.6.1</h3>
+<a name="1.3.1"><!-- Empty --></a>
+<h4>1.3.1 Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+
+         Correction to work with new versions of STDLIB that no
+         longer has the <span class="code">erl_internal:obsolete/3</span> function.<br />
+
+
+         Own Id: OTP-7539<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.4"><!-- Empty --></a>
+<h3>1.4 Edoc 0.7.6</h3>
+<a name="1.4.1"><!-- Empty --></a>
+<h4>1.4.1 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+
+         Minor changes.<br />
+
+
+         Own Id: OTP-7388<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.5"><!-- Empty --></a>
+<h3>1.5 Edoc 0.7.5</h3>
+<a name="1.5.1"><!-- Empty --></a>
+<h4>1.5.1 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+
+         Minor updates, mostly cosmetic.<br />
+
+
+         Own Id: OTP-7243<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.6"><!-- Empty --></a>
+<h3>1.6 Edoc 0.7.3</h3>
+<a name="1.6.1"><!-- Empty --></a>
+<h4>1.6.1 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+Minor Makefile changes.<br />
+
+Own Id: OTP-6689<br />
+
+
+</li>
+
+
+<li>
+
+Dialyzer warnings were eliminated.<br />
+
+Own Id: OTP-6737<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.7"><!-- Empty --></a>
+<h3>1.7 EDoc 0.7.2</h3>
+<a name="1.7.1"><!-- Empty --></a>
+<h4>1.7.1 Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Some missing files have been added:
+<span class="code">~/include/edoc_doclet.hrl</span>, <span class="code">~/priv/edoc.dtd</span>,
+<span class="code">~/priv/erlang.png</span><br />
+
+Own Id: OTP-6457<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.7.2"><!-- Empty --></a>
+<h4>1.7.2 Improvements and New Features</h4>
+
+<ul>
+
+<li>
+
+
+<ul>
+
+<li>
+Undefined macros only cause warnings, not errors.
+</li>
+
+
+<li>
+New, built-in <span class="code">@version</span> macro.
+</li>
+
+
+<li>
+Documented the <span class="code">@docfile</span> and <span class="code">@headerfile</span>
+generic tags.
+</li>
+
+
+<li>
+Added recognition of <span class="code">&#34;TODO:&#34;</span> as a wiki
+equivalent for <span class="code">@todo</span> tags.
+</li>
+
+
+<li>
+Added documentation about overview pages.
+</li>
+
+
+<li>
+<span class="code">'where'</span> and <span class="code">','</span> are allowed as
+separators in specs.
+</li>
+
+
+<li>
+Corrected ambiguity in spec grammar (possible
+incompatibility issue - parentheses may need to be added
+in some cases, in existing code).
+</li>
+
+
+<li>
+Experimental (and undocumented) support for
+<span class="code">@param</span> and <span class="code">@return</span> tags and corresponding
+<span class="code">&#34;...&#34;</span> annotations on <span class="code">@spec</span> parameters.
+</li>
+
+
+</ul>
+
+*** POTENTIAL INCOMPATIBILITY ***<br />
+
+Own Id: OTP-6568<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.8"><!-- Empty --></a>
+<h3>1.8 EDoc 0.7.1</h3>
+<a name="1.8.1"><!-- Empty --></a>
+<h4>1.8.1 Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Fixed some broken links in the documentation.<br />
+
+Own Id: OTP-6419<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.9"><!-- Empty --></a>
+<h3>1.9 EDoc 0.7.0</h3>
+
+<p>Miscellaneous changes.
+</p><center>
+<hr/>
+<small>edoc 0.7.6.3<br/>
+  Copyright &copy; 1991-2009
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

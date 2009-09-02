@@ -70,7 +70,7 @@
 -export([parse_xml/2, expand_text/2]).
 
 -include("edoc.hrl").
--include("xmerl.hrl").
+-include_lib("xmerl/include/xmerl.hrl").
 
 -define(BASE_HEADING, 3).
 

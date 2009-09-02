@@ -41,7 +41,7 @@
 -import(edoc_report, [report/2, warning/2]).
 
 -include("edoc.hrl").
--include("xmerl.hrl").
+-include_lib("xmerl/include/xmerl.hrl").
 
 -define(FILE_BASE, "/").
 

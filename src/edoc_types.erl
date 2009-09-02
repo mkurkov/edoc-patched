@@ -33,7 +33,7 @@
 %% @headerfile "edoc_types.hrl"
 
 -include("edoc_types.hrl").
--include("xmerl.hrl").
+-include_lib("xmerl/include/xmerl.hrl").
 
 
 is_predefined(any) -> true;

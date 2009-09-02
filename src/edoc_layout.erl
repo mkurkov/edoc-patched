@@ -33,7 +33,7 @@
 
 -import(edoc_report, [report/2]).
 
--include("xmerl.hrl").
+-include_lib("xmerl/include/xmerl.hrl").
 
 -define(HTML_EXPORT, xmerl_html).
 -define(DEFAULT_XML_EXPORT, ?HTML_EXPORT).

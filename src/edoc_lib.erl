@@ -660,7 +660,7 @@ write_file(Text, Dir, Name, Package) ->
     Dir1 = filename:join([Dir | packages:split(Package)]),
     File = filename:join(Dir1, Name),
     ok = filelib:ensure_dir(File),
-    case file:open(File, [write]) of
+    case file:open(File, [write, {encoding, utf8}]) of
 	{ok, FD} ->
 	    io:put_chars(FD, Text),
 	    ok = file:close(FD);
